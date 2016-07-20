@@ -8,4 +8,9 @@ RUN set -x \
   && apt-get install -y --no-install-recommends python-pip python-all-dev
 
 RUN set -x \
+  && apt-get install -y --no-install-recommends libffi-dev libssl-dev \
+  && pip install gsutil \
+  && pip install awscli
+
+RUN set -x \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man /tmp/*
