@@ -1,4 +1,4 @@
-FROM golang:1.7
+FROM golang:1.8
 
 RUN set -x \
   && apt-get update \
