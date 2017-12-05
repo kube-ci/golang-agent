@@ -1,12 +1,4 @@
-FROM golang:1.8
+FROM golang:1.9-alpine
 
 RUN set -x \
-  && apt-get update \
-  && apt-get -y --no-install-recommends install build-essential automake libtool ca-certificates git curl wget unzip gettext
-
-RUN set -x \
-  && apt-get install -y --no-install-recommends python-pip python-all-dev
-
-RUN set -x \
-  && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man /tmp/*
-
+  && apk add --update --no-cache ca-certificates musl-dev git curl wget
